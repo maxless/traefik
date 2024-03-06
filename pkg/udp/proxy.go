@@ -3,7 +3,6 @@ package udp
 import (
 	"encoding/binary"
 	"errors"
-	"fmt"
 	"io"
 	"net"
 	"time"
@@ -64,8 +63,8 @@ func makeProxyV2Header(conn *Conn, connBackend net.Conn) []byte {
 	ipv6 := false
 	srcAddr := conn.rAddr.(*net.UDPAddr)
 	dstAddr := conn.listener.pConn.LocalAddr().(*net.UDPAddr)
-	fmt.Println(srcAddr)
-	fmt.Println(dstAddr)
+//	fmt.Println(srcAddr)
+//	fmt.Println(dstAddr)
 	if srcAddr.IP.To4() == nil {
 		ipv6 = true
 	}
